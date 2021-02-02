@@ -1,0 +1,20 @@
+{% extends "base.html" %} #this file inherits from base.html
+
+{% block title %} Royal Hotels {% endblock %}
+
+{% block header %}Welcome to the Royal Hotel {% endblock %}
+
+{% block content %}
+
+{% for name in names %}
+    <ul>
+        {% if name == "Priyanka" %}
+        <li>Hello, {{name}}!</li>
+        {% else %}
+        <li>{{name}}</li>
+        {% endif %}
+    </ul>
+
+{% endfor %}
+
+{% endblock %}
