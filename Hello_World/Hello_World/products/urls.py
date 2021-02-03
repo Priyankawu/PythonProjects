@@ -20,9 +20,7 @@ from django.urls import path
 from . import views  # . is the main dir where view.py is
 
 urlpatterns = [
-    path('', views.home, name="home"), # if nothing in path, do the home() in views file
-    path('admin/', admin.site.urls),
-    path('', include('products.urls')),
+    path('admin_console', views.admin_console, name="admin_console"),
 ]
 
-urlpatterns += staticfiles_urlpatterns()
+
