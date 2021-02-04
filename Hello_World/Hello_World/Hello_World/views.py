@@ -9,4 +9,4 @@ def home(request):
     context = {'products': products, }
     context1 = {"names": names, }
     # context1 dictionary contains all variables needed in the template.
-    return render(request, "home.html", context)  # HttpResponse("<h1>Hello {}!</h1>".format(user))
+    return render(request, "home.html", context1)  # HttpResponse("<h1>Hello {}!</h1>".format(user))

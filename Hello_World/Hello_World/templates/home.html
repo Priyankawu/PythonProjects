@@ -6,6 +6,13 @@
 
 {% block content %}
 
+<form name="select_one" method="POST" action="">
+    <label for="menu_id"> Please choose one of the three profiles </label>
+    <select id="menu_id" name="menu" onchange="top.location.href=this.options[this.selectedIndex].value;">
+    {% for name in names %}
+        <option value="../{{ name.pk }}/details/"> {{ name.name }} </option>
+    {% endfor %}
+</form>
 
 {% endblock %}
 

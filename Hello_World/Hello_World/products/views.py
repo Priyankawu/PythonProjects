@@ -1,11 +1,37 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product
+from .forms import ProductForm
 
 # Create your views here.
 
 
 def admin_console(request):
     products = Product.objects.all()   # object is the mgr that interacts with database
-    render(request, "products/products_page.html", {'products': products})
+    return render(request, "products/products_page.html", {'products': products})
+
+
+
+def details(request,pk):
+    pk = int(pk)
+    # item will be the chosen item form the database
+    item = get_object_or_404(Product, pk=pk) # red pk is the dictionary object
+    #shows all the details of the item chosen
+    form = ProductForm(data=request.POST or None, instance=item)
+    if request.method == 'POST':
+        if form.is_valid():
+            form2 = form.save(commit=False)
+            form2.save()
+            return redirect('admin_console')
+        else:
+            print(form.errors)
+    else:
+        return render(request, 'products/present_product.html',{'form': form})
+
+
+def delete(request,pk):
+    pk = int(pk)
+    item = get_object_or_404(Product, pk=pk)
+
+

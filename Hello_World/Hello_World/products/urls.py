@@ -21,6 +21,8 @@ from . import views  # . is the main dir where view.py is
 
 urlpatterns = [
     path('admin_console', views.admin_console, name="admin_console"),
+    # details takes in request and pk as arguments.
+    path('<int:pk>/details/', views.details, name="details")
 ]
 
 
