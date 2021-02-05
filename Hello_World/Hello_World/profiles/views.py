@@ -7,11 +7,12 @@ from .forms import UserForm
 
 def admin_console1(request):
     profiles = User.objects.all()   # object is the mgr that interacts with database
-    return render(request, "profiles/profiles_page.html", {'profiles': profiles})
+    return render(request, "../home.html/", {'profiles': profiles})
 
 # When profiles_detail.html form is submitted, do the following
 def details1(request, pk):
     pk = int(pk)
+    print("I am in details 1")
     item = get_object_or_404(User, pk=pk)
     form = UserForm(data=request.POST or None, instance=item)
     if request.method == 'POST':

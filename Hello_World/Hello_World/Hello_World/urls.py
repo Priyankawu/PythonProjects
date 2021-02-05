@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('products.urls')),
 ]
 
+# ? Is this adding the urlpattern from the app url.py's? 
 urlpatterns += staticfiles_urlpatterns()
