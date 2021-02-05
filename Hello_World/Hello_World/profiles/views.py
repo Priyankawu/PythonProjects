@@ -22,5 +22,5 @@ def details1(request, pk):
         else:
             print(form.error)
     else:
-        return render(request, "profiles/profiles_detail.html", {'form':form})
+        return render(request, "profiles/profiles_detail1.html", {'form':form})
 
