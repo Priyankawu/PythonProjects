@@ -1,0 +1,24 @@
+{% extends base.html %}
+
+{% block title %} Profile Details {% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+
+<div class="admin_panel">
+    <!-- check what the details is here -->
+    <form name="profileForm" method="POST" action="../details1/">
+        <table>
+            {% csrf_token %}
+            {{ form.non_field_errors}}
+            {{ form.as_table }}
+        </table>
+        <div class="frmBtn_container">
+            <input type="submit">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -15,7 +15,7 @@
            <label for="menu_id">Select a product from the list to edit:</label>
            <select id="menu_id" name="menu" onchange="top.location.href=this.options[this.selectedIndex].value;">
                {%  for product in products %}
-                     <!-- details is the method in views-->
+                     <!-- get info of the option selected. details is the method in views-->
                     <option value="../{{ product.pk }}/details/"> {{ product.name }} </option>
                {% endfor %}
            </select>

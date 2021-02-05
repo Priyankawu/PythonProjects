@@ -10,7 +10,7 @@
     <label for="menu_id"> Please choose one of the three profiles </label>
     <select id="menu_id" name="menu" onchange="top.location.href=this.options[this.selectedIndex].value;">
     {% for profiles in profiles %}
-        <option value="../{{ profiles.pk }}/details/"> {{ profiles.firstname }} </option>
+        <option value="../{{ profiles.pk }}/details1/"> {{ profiles.firstname }} </option>
     {% endfor %}
 </form>
 
