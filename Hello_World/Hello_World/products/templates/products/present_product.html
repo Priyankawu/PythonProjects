@@ -18,8 +18,8 @@
        <div class="frmBtn_container">
            <input type="submit" > <!-- this invokes the action method in form -->
            <div class="frmBtn_container">
-                <a href="../>{{ form.pk }}delete/"><button class="btn">DELETE</button></a>
-                <a href=" {% url 'admin_console' %}"><button class="btn">CANCEL</button></a>
+                <button class="btn"> <a href="../{{ form.pk }}delete/"> DELETE </a> </button>
+                <button class="btn"> <a href=" {% url 'admin_console' %}"> CANCEL </a> </button>
             </div>
        </div>
     </form>

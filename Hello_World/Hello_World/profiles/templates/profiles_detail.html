@@ -1,4 +1,4 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block title %} Profile Details {% endblock %}
 
@@ -17,6 +17,13 @@
         </table>
         <div class="frmBtn_container">
             <input type="submit">
+        </div>
+        <div>
+
+           <a href="../{{ form.pk }}delete/"></a> <button>DELETE</button></a>
+            # takes user back to profiles drop-down menu
+            <button><a href="{% url 'admin_console1' %}">CANCEL </a></button>
+
         </div>
     </form>
 </div>

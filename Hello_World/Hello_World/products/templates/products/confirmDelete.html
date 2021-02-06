@@ -9,13 +9,13 @@
     <form method="POST" action="">
         {% csrf_token %}
         <h2>Confirm Delete</h2>
-        # item is packaged in the context dictionary passed with the request in views function
+        <!-- item is packaged in the context dictionary passed with the request in views function -->
         <p>Are you sure you would like to delete "{{item.name}}"from the database?</p>
 
         {{ item.as_p }}
 
         <input type="submit" value="Yes, delete it!" class=btn>
-        # admin_console is a function in views that started all this
+        <!-- admin_console is a function in views that started all this -->
         <a href="{% url 'admin_console' %}"><button class="btn" type="button">Cancel</button></a>
     </form>
 

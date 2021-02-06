@@ -12,6 +12,7 @@
     {% for profiles in profiles %}
         <option value="../{{ profiles.pk }}/details1/"> {{ profiles.firstname }} </option>
     {% endfor %}
+        <option value="{% url 'createProfile' %}"> Add another profile </option>
 </form>
 
 {% endblock %}

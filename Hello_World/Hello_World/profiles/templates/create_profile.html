@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %} Profile Details {% endblock %}
+
+{% block header %} Create New Profile{% endblock %}
+
+{% block content %}
+
+
+    <div class="admin_panel">
+        <form method="POST" action="{% url 'createProfile' %}">
+            <div class="frmObject_container">
+                <!-- Cross Site Request Forgery (csrf_token) protection -->
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="frmBtn_container">
+                <input type="submit" class="btn" value="Create New Profile" name="Save_Item">
+                <button>Save Profile</button>
+                <a href="{% url 'admin_console1' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

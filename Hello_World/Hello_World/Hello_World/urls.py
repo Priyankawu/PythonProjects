@@ -23,7 +23,8 @@ urlpatterns = [
     path('', views.home, name="home"), # if nothing in path, do the home() in views file
     path('admin/', admin.site.urls),
     path('', include('products.urls')),
+    path('', include('profiles.urls'))
 ]
 
-# ? Is this adding the urlpattern from the app url.py's? 
+# ? Is this adding the urlpattern from the app url.py's?
 urlpatterns += staticfiles_urlpatterns()
