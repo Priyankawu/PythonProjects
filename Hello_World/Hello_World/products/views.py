@@ -12,7 +12,6 @@ def admin_console(request):
     return render(request, "products/products_page.html", {'products': products})
 
 
-
 def details(request,pk):
     pk = int(pk)
     # item will be the chosen item form the database

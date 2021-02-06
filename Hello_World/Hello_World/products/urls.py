@@ -25,7 +25,7 @@ urlpatterns = [
     path('<int:pk>/details/', views.details, name="details"),
     path('<int:pk>/delete/', views.delete, name="delete"),
     path('confirmdelete/', views.confirmed, name='confirmed'),
-    path('createRecord/', views.createRecord, name='createRecord')
+    path('createRecord/', views.createRecord, name='createRecord'),
 ]
 
 
