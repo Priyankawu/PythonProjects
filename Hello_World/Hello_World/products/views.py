@@ -35,8 +35,8 @@ def delete(request, pk):
     if request.method == 'POST':
         item.delete()
         return redirect('admin_console')
-    context = {"item": item, }
-    return render(request, "products/confirmDelete.html", context)
+    content = {"item": item, }
+    return render(request, "products/confirmDelete.html", content)
 
 def confirmed(request):
     if request.method == 'POST':

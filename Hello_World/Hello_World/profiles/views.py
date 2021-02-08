@@ -25,14 +25,29 @@ def details1(request, pk):
     else:
         return render(request, "profiles_detail.html", {'form': form})
 
-def delete(request,pk):
+
+def delete1(request, pk):
     pk = int(pk)
-    item = get_object_or_404(Product, pk=pk)
+    print(pk)
+    item = get_object_or_404(User, pk=pk)
     if request.method == 'POST':
         item.delete()
         return redirect('admin_console1')
-    context = {"item": item, }
-    return render(request, "profiles/confirmDelete.html", context)
+    content = {"item": item, }
+    # I removed "profiles/"from the folowing middle argument. It was causing wrong path. ***
+    return render(request, "confirmDelete.html", content)
+
+
+def confirmed(request):
+    if request.method == 'POST':
+        #creates from instance and binds data to it
+        form = UserForm(request.POST or None)
+        if form.is_valid():
+            form.delete()
+            return redirect('admin_console1')
+    else:
+        return redirect('admin_console1')
+
 
 
 def createProfile(request):
@@ -43,8 +58,8 @@ def createProfile(request):
     else:
         print(form.errors)
         form = UserForm()
-    context = {'form': form}
-    return render(request, 'create_profile.html', context)
+    content = {'form': form}
+    return render(request, 'create_profile.html', content)
 
 
 
