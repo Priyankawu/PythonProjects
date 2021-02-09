@@ -12,7 +12,8 @@
             {% csrf_token %}
             {{ form.account }}
             <!-- how to url balance here -->
-            <button type="submit"><a href="{% url 'create' %}">Go to Account</a></button>
+            <button type="submit" ><a href="../../{{ form.pk }}balance/">Go to Account</a></button>
+            <!--a="../../{{ form.pk }}balance/"-->
         </form>
     </div>
     <hr>
