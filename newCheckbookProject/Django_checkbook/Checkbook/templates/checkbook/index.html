@@ -7,13 +7,11 @@
     <div class="text-center">
         <h5>Manage your existing account!</h5>
         <!-- Replaced the <input> with a Django form including a dropdown list of accounts-->
-        <form>
+        <form method="POST">
             <label id="index-label">Choose Account:</label>
             {% csrf_token %}
             {{ form.account }}
-            <!-- how to url balance here -->
-            <button type="submit" ><a href="../../{{ form.pk }}balance/">Go to Account</a></button>
-            <!--a="../../{{ form.pk }}balance/"-->
+            <button type="submit" >Go to Account</button>
         </form>
     </div>
     <hr>
